@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Estrela
+ *
+ */
+module Hotel {
+}
