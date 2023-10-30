@@ -25,10 +25,35 @@ public class Program {
 		else {
 			Reservation reservation = new Reservation(null, checkin, checkout);
 			System.out.println( " Reservation: " +reservation );
-		}
+			
+			System.out.println();
+			System.out.println("Enter data to update the revervation: ");
+			System.out.println("check- in (date dd/mm/yyyy): ");
+			  checkin= sdf.parse(tc.next());
+			System.out.println("check- out (date dd/mm/yyyy): ");
+			 checkout= sdf.parse(tc.next());
+			 
+			 Date now= new Date();
+			 if (checkin.before(now)||checkout.before(now) ) {
+					System.out.println("error in reservation: as datas para atualizaçazões ");
+			 }
+			 else if (!checkout.after(checkin)) {
+				 System.out.println("error in reservation: data de entrada posterior a data de saída");
+			 }
+			 
+			 
+
+			 reservation.updateDates(checkin, checkout);
+			 System.out.println( " Reservation: " +reservation );
+		     }
+		
+		
 		tc.close();
+		}
 	}
-	}
+
+	
+	
 		
 		
 		
